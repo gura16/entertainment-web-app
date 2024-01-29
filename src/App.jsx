@@ -2,11 +2,13 @@ import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 import Login from "./login";
 import Signup from "./signup";
+import Header from "./header";
 function App() {
   return (
     <>
       <GlobalStyles />
-      {/* <Login /> */}
+      <Header />
+      <Login />
       <Signup />
     </>
   );

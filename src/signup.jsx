@@ -6,7 +6,7 @@ function Signup() {
     <Maincontainer>
       <Icon src={icon} />
       <Logincontainer>
-        <Logintitle>Login</Logintitle>
+        <Signuptitle>Sign Up</Signuptitle>
         <Inputemail placeholder="Email address" textColor="#FFFFFF" />
         <Inputpassword placeholder="Password" textColor="#FFFFFF" />
         <Repeatpassword placeholder="Password" textColor="#FFFFFF" />
@@ -51,8 +51,7 @@ const Logincontainer = styled.div`
   gap: 25px;
 `;
 
-const Logintitle = styled.p`
-  width: 76px;
+const Signuptitle = styled.p`
   height: 40px;
   color: white;
   font-family: "Outfit", sans-serif;
@@ -172,6 +171,10 @@ const Button = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  &:hover {
+    background-color: white;
+    color: black;
+  }
 `;
 
 const Signupcard = styled.div`

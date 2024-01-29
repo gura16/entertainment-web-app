@@ -139,6 +139,10 @@ const Button = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  &:hover {
+    background-color: white;
+    color: black;
+  }
 `;
 
 const Signupcard = styled.div`
