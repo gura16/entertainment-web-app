@@ -3,13 +3,15 @@ import styled from "styled-components";
 import Login from "./login";
 import Signup from "./signup";
 import Header from "./header";
+import Home from "./home";
 function App() {
   return (
     <>
       <GlobalStyles />
       <Header />
-      <Login />
-      <Signup />
+      <Home />
+      {/* <Login />
+      <Signup /> */}
     </>
   );
 }
