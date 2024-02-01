@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import icon from "./assets/logo.svg";
+import icon from "../public/assets/logo.svg";
 function Login() {
   return (
     <Maincontainer>

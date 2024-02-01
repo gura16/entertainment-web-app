@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import redicon from "./assets/logo.svg";
-import manimage from "./assets/image-avatar.png";
-import navhome from "./assets/icon-nav-home.svg";
-import navmovies from "./assets/icon-nav-movies.svg";
-import navtvseries from "./assets/icon-nav-tv-series.svg";
-import navbookmark from "./assets/icon-nav-bookmark.svg";
+import redicon from "../public/assets/logo.svg";
+import manimage from "../public/assets/image-avatar.png";
+import navhome from "../public/assets/icon-nav-home.svg";
+import navmovies from "../public/assets/icon-nav-movies.svg";
+import navtvseries from "../public/assets/icon-nav-tv-series.svg";
+import navbookmark from "../public/assets/icon-nav-bookmark.svg";
 
 function Header() {
   return (
