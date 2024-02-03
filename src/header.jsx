@@ -14,7 +14,6 @@ function Header() {
         <Navhome src={navhome} />
         <Navmovies src={navmovies} />
         <Navtvseries src={navtvseries} />
-
         <Navbookmark src={navbookmark} />
       </Categorycard>
       <Manimage src={manimage} />

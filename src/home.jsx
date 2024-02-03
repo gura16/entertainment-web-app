@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import iconsearch from "../public/assets/icon-search.svg";
 import { useEffect, useState } from "react";
-import jsonData from "../public/data.json";
 import MySwiper from "./slider";
 
 function Home() {
