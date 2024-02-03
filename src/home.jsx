@@ -2,10 +2,9 @@ import styled from "styled-components";
 import iconsearch from "../public/assets/icon-search.svg";
 import { useEffect, useState } from "react";
 import jsonData from "../public/data.json";
+import MySwiper from "./slider";
 
 function Home() {
-  const trendingItems = jsonData.filter((item) => item.isTrending);
-
   return (
     <Maincontainer>
       <Homesearch
@@ -13,12 +12,7 @@ function Home() {
         placeholder="Search for movies or TV series"
         textColor="#FFFFFF"
       />
-      {trendingItems.map((item, index) => (
-        <Trendingcard
-          style={{ backgroundImage: `url(${item.thumbnail.regular.large})` }}
-          key={index}
-        ></Trendingcard>
-      ))}
+      <MySwiper />
     </Maincontainer>
   );
 }
@@ -44,15 +38,4 @@ const Homesearch = styled.input`
   &:focus {
     outline: none;
   }
-`;
-
-const Trendingcard = styled.div`
-  width: 240px;
-  height: 140px;
-  color: white;
-`;
-
-const Img = styled.img`
-  width: 240px;
-  height: 140px;
 `;
