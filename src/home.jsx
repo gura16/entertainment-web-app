@@ -12,7 +12,9 @@ function Home() {
         placeholder="Search for movies or TV series"
         textColor="#FFFFFF"
       />
-      <MySlider />
+      <StyledSliderContainer>
+        <MySlider />
+      </StyledSliderContainer>
       <Recommended />
     </Maincontainer>
   );
@@ -20,9 +22,12 @@ function Home() {
 
 export default Home;
 
-const Maincontainer = styled.div``;
+const Maincontainer = styled.div`
+  padding-left: 15px;
+`;
 
 const Homesearch = styled.input`
+  margin-top: 20px;
   width: 257px;
   height: 24px;
   background-color: #10141e;
@@ -39,4 +44,8 @@ const Homesearch = styled.input`
   &:focus {
     outline: none;
   }
+`;
+
+const StyledSliderContainer = styled.div`
+  margin-top: 30px;
 `;

@@ -20,43 +20,57 @@ const MySlider = () => {
   };
 
   return (
-    <Swiper
-      style={swiperStyles}
-      spaceBetween={10}
-      slidesPerView={1.5}
-      pagination={{ clickable: true }}
-    >
-      {trendingItems.map((item, index) => (
-        <SwiperSlide key={index} style={swiperSlides}>
-          <Trendingbox>
-            <Trendingcard
-              style={{
-                backgroundImage: `url(${item.thumbnail.trending.small})`,
-              }}
-            >
-              <Titelscard>
-                <Yearscard>
-                  <Year>{item.year}</Year>
-                  <Point></Point>
-                  <Iconmovie src={icon_movie}></Iconmovie>
-                  <Category>{item.category}</Category>
-                  <Point></Point>
-                  <Rating>{item.rating}</Rating>
-                </Yearscard>
-                <Title>{item.title}</Title>
-              </Titelscard>
-              <Circle>
-                <Icon_bookmark_empty src={icon_bookmark_empty} />
-              </Circle>
-            </Trendingcard>
-          </Trendingbox>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <>
+      <Trendingtitle>Trending</Trendingtitle>
+      <Swiper
+        style={swiperStyles}
+        spaceBetween={10}
+        slidesPerView={1.5}
+        pagination={{ clickable: true }}
+      >
+        {trendingItems.map((item, index) => (
+          <SwiperSlide key={index} style={swiperSlides}>
+            <Trendingbox>
+              <Trendingcard
+                style={{
+                  backgroundImage: `url(${item.thumbnail.trending.small})`,
+                }}
+              >
+                <Titelscard>
+                  <Yearscard>
+                    <Year>{item.year}</Year>
+                    <Point></Point>
+                    <Iconmovie src={icon_movie}></Iconmovie>
+                    <Category>{item.category}</Category>
+                    <Point></Point>
+                    <Rating>{item.rating}</Rating>
+                  </Yearscard>
+                  <Title>{item.title}</Title>
+                </Titelscard>
+                <Circle>
+                  <Icon_bookmark_empty src={icon_bookmark_empty} />
+                </Circle>
+              </Trendingcard>
+            </Trendingbox>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </>
   );
 };
 
 export default MySlider;
+
+const Trendingtitle = styled.p`
+  font-family: "Outfit", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: -0.3125px;
+  text-align: left;
+  color: white;
+  margin-bottom: 30px;
+`;
 
 const Trendingcard = styled.div`
   width: 240px;

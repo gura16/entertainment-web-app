@@ -8,37 +8,56 @@ function Recommended() {
   const recommendedItems = jsonData.filter((item) => !item.isTrending);
 
   return (
-    <Maincontainer>
-      {recommendedItems.map((item, index) => (
-        <Eachcontainer key={index}>
-          <Imgcard
-            style={{ backgroundImage: `url(${item.thumbnail.regular.small})` }}
-          >
-            <Circle>
-              <Icon_bookmark_empty src={icon_bookmark_empty} />
-            </Circle>
-          </Imgcard>
-          <Infocard>
-            <Year>{item.year}</Year>
-            <Point></Point>
-            <Iconmovie src={icon_movie}></Iconmovie>
-            <Category>{item.category}</Category>
-            <Point></Point>
-            <Rating>{item.rating}</Rating>
-          </Infocard>
-          <Title>{item.title}</Title>
-        </Eachcontainer>
-      ))}
-    </Maincontainer>
+    <>
+      <Recomendedtitle>Recommended for you</Recomendedtitle>
+
+      <Maincontainer1>
+        {recommendedItems.map((item, index) => (
+          <Eachcontainer key={index}>
+            <Imgcard
+              style={{
+                backgroundImage: `url(${item.thumbnail.regular.small})`,
+              }}
+            >
+              <Circle>
+                <Icon_bookmark_empty src={icon_bookmark_empty} />
+              </Circle>
+            </Imgcard>
+            <Infocard>
+              <Year>{item.year}</Year>
+              <Point></Point>
+              <Iconmovie src={icon_movie}></Iconmovie>
+              <Category>{item.category}</Category>
+              <Point></Point>
+              <Rating>{item.rating}</Rating>
+            </Infocard>
+            <Title>{item.title}</Title>
+          </Eachcontainer>
+        ))}
+      </Maincontainer1>
+    </>
   );
 }
 
 export default Recommended;
 
-const Maincontainer = styled.div`
+const Recomendedtitle = styled.p`
+  font-family: "Outfit", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: -0.3125px;
+  text-align: left;
+  color: white;
+  margin-top: 30px;
+`;
+
+const Maincontainer1 = styled.div`
   display: grid;
   grid-template-columns: auto auto;
-  gap: 15px;
+  row-gap: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 `;
 
 const Eachcontainer = styled.div`
