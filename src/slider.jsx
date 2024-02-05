@@ -3,7 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import jsonData from "../public/data.json";
 import styled from "styled-components";
-import icon_movie from "../public/assets/icon-nav-movies.svg";
+import icon_movie from "../public/assets/icon-category-movie.svg";
+import icon_tvseries from "../public/assets/icon-category-tv.svg";
 import icon_bookmark_empty from "../public/assets/icon-bookmark-empty.svg";
 
 const MySlider = () => {
@@ -40,7 +41,11 @@ const MySlider = () => {
                   <Yearscard>
                     <Year>{item.year}</Year>
                     <Point></Point>
-                    <Iconmovie src={icon_movie}></Iconmovie>
+                    <Iconmovie
+                      src={
+                        item.category === "Movie" ? icon_movie : icon_tvseries
+                      }
+                    ></Iconmovie>
                     <Category>{item.category}</Category>
                     <Point></Point>
                     <Rating>{item.rating}</Rating>

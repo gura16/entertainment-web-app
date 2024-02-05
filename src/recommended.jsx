@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import jsonData from "../public/data.json";
-import icon_movie from "../public/assets/icon-nav-movies.svg";
+import icon_movie from "../public/assets/icon-category-movie.svg";
+import icon_tvseries from "../public/assets/icon-category-tv.svg";
 import icon_bookmark_empty from "../public/assets/icon-bookmark-empty.svg";
 
 function Recommended() {
@@ -14,11 +15,7 @@ function Recommended() {
       <Maincontainer1>
         {recommendedItems.map((item, index) => (
           <Eachcontainer key={index}>
-            <Imgcard
-              style={{
-                backgroundImage: `url(${item.thumbnail.regular.small})`,
-              }}
-            >
+            <Imgcard img={item}>
               <Circle>
                 <Icon_bookmark_empty src={icon_bookmark_empty} />
               </Circle>
@@ -26,7 +23,9 @@ function Recommended() {
             <Infocard>
               <Year>{item.year}</Year>
               <Point></Point>
-              <Iconmovie src={icon_movie}></Iconmovie>
+              <Iconmovie
+                src={item.category === "Movie" ? icon_movie : icon_tvseries}
+              ></Iconmovie>
               <Category>{item.category}</Category>
               <Point></Point>
               <Rating>{item.rating}</Rating>
@@ -71,6 +70,7 @@ const Imgcard = styled.div`
   width: 164px;
   height: 110px;
   border-radius: 10px;
+  background-image: ${(props) => `url(${props.img.thumbnail.regular.small})`};
 `;
 const Infocard = styled.div`
   display: flex;
