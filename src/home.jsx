@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import iconsearch from "../public/assets/icon-search.svg";
 import { useEffect, useState } from "react";
-import MySwiper from "./slider";
+import MySlider from "./slider";
+import Recommended from "./recommended";
 
 function Home() {
   return (
@@ -11,7 +12,8 @@ function Home() {
         placeholder="Search for movies or TV series"
         textColor="#FFFFFF"
       />
-      <MySwiper />
+      <MySlider />
+      <Recommended />
     </Maincontainer>
   );
 }

@@ -6,7 +6,7 @@ import styled from "styled-components";
 import icon_movie from "../public/assets/icon-nav-movies.svg";
 import icon_bookmark_empty from "../public/assets/icon-bookmark-empty.svg";
 
-const MySwiper = () => {
+const MySlider = () => {
   const trendingItems = jsonData.filter((item) => item.isTrending);
 
   const swiperStyles = {
@@ -56,7 +56,7 @@ const MySwiper = () => {
   );
 };
 
-export default MySwiper;
+export default MySlider;
 
 const Trendingcard = styled.div`
   width: 240px;
