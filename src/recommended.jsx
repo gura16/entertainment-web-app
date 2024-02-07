@@ -4,9 +4,12 @@ import jsonData from "../public/data.json";
 import icon_movie from "../public/assets/icon-category-movie.svg";
 import icon_tvseries from "../public/assets/icon-category-tv.svg";
 import icon_bookmark_empty from "../public/assets/icon-bookmark-empty.svg";
+import icon_bookmark_full from "../public/assets/icon-bookmark-full.svg";
+import { useState } from "react";
 
 function Recommended() {
   const recommendedItems = jsonData.filter((item) => !item.isTrending);
+  const [movies, setMovies] = useState(recommendedItems);
 
   return (
     <>
@@ -16,8 +19,17 @@ function Recommended() {
         {recommendedItems.map((item, index) => (
           <Eachcontainer key={index}>
             <Imgcard img={item}>
-              <Circle>
-                <Icon_bookmark_empty src={icon_bookmark_empty} />
+              <Circle
+                onClick={() => {
+                  movies[index].isBookmarked = !movies[index].isBookmarked;
+                  setMovies([...movies]);
+                }}
+              >
+                <Icon_bookmark_empty
+                  src={
+                    item.isBookmarked ? icon_bookmark_full : icon_bookmark_empty
+                  }
+                />
               </Circle>
             </Imgcard>
             <Infocard>

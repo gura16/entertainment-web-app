@@ -6,6 +6,7 @@ import styled from "styled-components";
 import icon_movie from "../public/assets/icon-category-movie.svg";
 import icon_tvseries from "../public/assets/icon-category-tv.svg";
 import icon_bookmark_empty from "../public/assets/icon-bookmark-empty.svg";
+import icon_bookmark_full from "../public/assets/icon-bookmark-full.svg";
 
 const MySlider = () => {
   const trendingItems = jsonData.filter((item) => item.isTrending);
