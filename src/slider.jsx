@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import jsonData from "../public/data.json";
@@ -10,6 +11,7 @@ import icon_bookmark_full from "../public/assets/icon-bookmark-full.svg";
 
 const MySlider = () => {
   const trendingItems = jsonData.filter((item) => item.isTrending);
+  const [movies, setMovies] = useState(trendingItems);
 
   const swiperStyles = {
     backgroundColor: "#10141E",
@@ -53,8 +55,19 @@ const MySlider = () => {
                   </Yearscard>
                   <Title>{item.title}</Title>
                 </Titelscard>
-                <Circle>
-                  <Icon_bookmark_empty src={icon_bookmark_empty} />
+                <Circle
+                  onClick={() => {
+                    movies[index].isBookmarked = !movies[index].isBookmarked;
+                    setMovies([...movies]);
+                  }}
+                >
+                  <Icon_bookmark_empty
+                    src={
+                      item.isBookmarked
+                        ? icon_bookmark_full
+                        : icon_bookmark_empty
+                    }
+                  />
                 </Circle>
               </Trendingcard>
             </Trendingbox>
