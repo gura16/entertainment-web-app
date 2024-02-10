@@ -12,6 +12,7 @@ function App() {
   const recommendedItems = jsonData.filter((item) => !item.isTrending);
   const movieitems = jsonData.filter((item) => item.category === "Movie");
   const tvserieseitems = jsonData.filter((item) => item.category !== "Movie");
+  const bookmarkitems = jsonData.filter((item) => item.isBookmarked);
 
   return (
     <>
@@ -24,6 +25,10 @@ function App() {
           <Route
             path="/tvseries"
             element={<Recommended data2={tvserieseitems} />}
+          />
+          <Route
+            path="/bookmarked"
+            element={<Recommended data2={bookmarkitems} />}
           />
         </Routes>
 
