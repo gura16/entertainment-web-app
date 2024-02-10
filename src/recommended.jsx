@@ -7,16 +7,18 @@ import icon_bookmark_empty from "../public/assets/icon-bookmark-empty.svg";
 import icon_bookmark_full from "../public/assets/icon-bookmark-full.svg";
 import { useState } from "react";
 
-function Recommended() {
-  const recommendedItems = jsonData.filter((item) => !item.isTrending);
+function Recommended(prop) {
+  const recommendedItems = prop.data2;
   const [movies, setMovies] = useState(recommendedItems);
+  //   const movieitems = jsonData.filter((item) => item.category === "Movie");
+  //   const tvserieseitems = jsonData.filter((item) => item.category !== "Movie");
 
   return (
     <>
       <Recomendedtitle>Recommended for you</Recomendedtitle>
 
       <Maincontainer1>
-        {recommendedItems.map((item, index) => (
+        {movies.map((item, index) => (
           <Eachcontainer key={index}>
             <Imgcard img={item}>
               <Circle
