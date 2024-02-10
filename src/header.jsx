@@ -6,6 +6,7 @@ import navmovies from "../public/assets/icon-nav-movies.svg";
 import navtvseries from "../public/assets/icon-nav-tv-series.svg";
 import navbookmark from "../public/assets/icon-nav-bookmark.svg";
 import iconsearch from "../public/assets/icon-search.svg";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import jsonData from "../public/data.json";
 
@@ -15,9 +16,15 @@ function Header() {
       <Maincontainer>
         <Redicon src={redicon} />
         <Categorycard>
-          <Navhome src={navhome} />
-          <Navmovies src={navmovies} />
-          <Navtvseries src={navtvseries} />
+          <Link to="/home">
+            <Navhome src={navhome} />
+          </Link>
+          <Link to="/movie">
+            <Navmovies src={navmovies} />
+          </Link>
+          <Link to="/tvseries">
+            <Navtvseries src={navtvseries} />
+          </Link>
           <Navbookmark src={navbookmark} />
         </Categorycard>
         <Manimage src={manimage} />
@@ -27,6 +34,7 @@ function Header() {
         placeholder="Search for movies or TV series"
         textColor="#FFFFFF"
       />
+      <Outlet />
     </>
   );
 }
