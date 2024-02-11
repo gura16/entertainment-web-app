@@ -6,11 +6,11 @@ import Signup from "./signup";
 import Header from "./header";
 import Home from "./home";
 import jsonData from "../public/data.json";
-import Recommended from "./recommended";
+import Movies from "./movies";
+import Tvseries from "./tvseries";
 
 function App() {
   const recommendedItems = jsonData.filter((item) => !item.isTrending);
-  const movieitems = jsonData.filter((item) => item.category === "Movie");
   const tvserieseitems = jsonData.filter((item) => item.category !== "Movie");
   const bookmarkitems = jsonData.filter((item) => item.isBookmarked);
 
@@ -20,16 +20,13 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/home" element={<Home data={recommendedItems} />} />
-          <Route path="/movie" element={<Recommended data2={movieitems} />} />
-          <Route
-            path="/tvseries"
-            element={<Recommended data2={tvserieseitems} />}
-          />
-          <Route
+          <Route path="/home" element={<Home data={jsonData} />} />
+          <Route path="/movie" element={<Movies data={jsonData} />} />
+          <Route path="/tvseries" element={<Tvseries data={jsonData} />} />
+          {/* <Route
             path="/bookmarked"
             element={<Recommended data2={bookmarkitems} />}
-          />
+          /> */}
         </Routes>
 
         {/* <Login />
