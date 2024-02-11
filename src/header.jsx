@@ -10,11 +10,6 @@ import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 function Header() {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    navigate("/home");
-  }, []);
   return (
     <>
       <Maincontainer>
