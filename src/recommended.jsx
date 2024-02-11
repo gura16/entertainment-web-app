@@ -1,17 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import jsonData from "../public/data.json";
 import icon_movie from "../public/assets/icon-category-movie.svg";
 import icon_tvseries from "../public/assets/icon-category-tv.svg";
 import icon_bookmark_empty from "../public/assets/icon-bookmark-empty.svg";
 import icon_bookmark_full from "../public/assets/icon-bookmark-full.svg";
 import { useState } from "react";
 
-function Recommended(prop) {
-  const recommendedItems = prop.data2;
+function Recommended(props) {
+  const recommendedItems = props.data.filter((item) => !item.isTrending);
+
   const [movies, setMovies] = useState(recommendedItems);
-  //   const movieitems = jsonData.filter((item) => item.category === "Movie");
-  //   const tvserieseitems = jsonData.filter((item) => item.category !== "Movie");
 
   return (
     <>

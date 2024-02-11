@@ -7,10 +7,14 @@ import navtvseries from "../public/assets/icon-nav-tv-series.svg";
 import navbookmark from "../public/assets/icon-nav-bookmark.svg";
 import iconsearch from "../public/assets/icon-search.svg";
 import { Link, Outlet, useNavigate } from "react-router-dom";
-import { useState } from "react";
-import jsonData from "../public/data.json";
+import { useEffect } from "react";
 
 function Header() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate("/home");
+  }, []);
   return (
     <>
       <Maincontainer>
@@ -25,7 +29,9 @@ function Header() {
           <Link to="/tvseries">
             <Navtvseries src={navtvseries} />
           </Link>
-          <Navbookmark src={navbookmark} />
+          <Link to="bookmarked">
+            <Navbookmark src={navbookmark} />
+          </Link>
         </Categorycard>
         <Manimage src={manimage} />
       </Maincontainer>

@@ -9,7 +9,7 @@ function Home(props) {
       <StyledSliderContainer>
         <MySlider />
       </StyledSliderContainer>
-      <Recommended data2={props.data} />
+      <Recommended data={props.data} />
     </Maincontainer>
   );
 }

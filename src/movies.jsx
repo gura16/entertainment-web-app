@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import jsonData from "../public/data.json";
 import icon_movie from "../public/assets/icon-category-movie.svg";
 import icon_tvseries from "../public/assets/icon-category-tv.svg";
 import icon_bookmark_empty from "../public/assets/icon-bookmark-empty.svg";
@@ -64,6 +63,7 @@ const Recomendedtitle = styled.p`
   text-align: left;
   color: white;
   margin-top: 30px;
+  padding-left: 15px;
 `;
 
 const Maincontainer1 = styled.div`
@@ -72,6 +72,7 @@ const Maincontainer1 = styled.div`
   row-gap: 30px;
   margin-top: 30px;
   margin-bottom: 30px;
+  padding-left: 15px;
 `;
 
 const Eachcontainer = styled.div`

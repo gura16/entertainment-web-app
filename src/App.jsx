@@ -1,6 +1,10 @@
 import { createGlobalStyle } from "styled-components";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import styled from "styled-components";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useNavigate,
+} from "react-router-dom";
 import Login from "./login";
 import Signup from "./signup";
 import Header from "./header";
@@ -8,25 +12,19 @@ import Home from "./home";
 import jsonData from "../public/data.json";
 import Movies from "./movies";
 import Tvseries from "./tvseries";
+import Bookmarkd from "./bookmarkd";
 
 function App() {
-  const recommendedItems = jsonData.filter((item) => !item.isTrending);
-  const tvserieseitems = jsonData.filter((item) => item.category !== "Movie");
-  const bookmarkitems = jsonData.filter((item) => item.isBookmarked);
-
   return (
     <>
       <GlobalStyles />
       <Router>
         <Header />
         <Routes>
-          <Route path="/home" element={<Home data={jsonData} />} />
+          <Route exact path="/home" element={<Home data={jsonData} />} />
           <Route path="/movie" element={<Movies data={jsonData} />} />
           <Route path="/tvseries" element={<Tvseries data={jsonData} />} />
-          {/* <Route
-            path="/bookmarked"
-            element={<Recommended data2={bookmarkitems} />}
-          /> */}
+          <Route path="/bookmarked" element={<Bookmarkd data={jsonData} />} />
         </Routes>
 
         {/* <Login />
