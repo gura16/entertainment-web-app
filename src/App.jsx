@@ -3,27 +3,31 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  useNavigate,
+  Navigate,
 } from "react-router-dom";
-import { useEffect } from "react";
-import Mainpage from "./mainpage";
+import Header from "./header";
+import Home from "./home";
+import jsonData from "../public/data.json";
+import Movies from "./movies";
+import Tvseries from "./tvseries";
+import Bookmarkd from "./bookmarkd";
 import Login from "./login";
 import Signup from "./signup";
 
 function App() {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    navigate("/login");
-  }, []);
   return (
     <>
       <GlobalStyles />
       <Router>
+        <Header />
         <Routes>
-          <Route exact path="/login" element={<Login />} />
+          <Route path="/" element={<Navigate to="/Login" />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/mainpage" element={<Mainpage />} />
+          <Route path="/home" element={<Home data={jsonData} />} />
+          <Route path="/movie" element={<Movies data={jsonData} />} />
+          <Route path="/tvseries" element={<Tvseries data={jsonData} />} />
+          <Route path="/bookmarked" element={<Bookmarkd data={jsonData} />} />
         </Routes>
       </Router>
     </>

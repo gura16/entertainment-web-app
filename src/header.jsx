@@ -6,11 +6,14 @@ import navmovies from "../public/assets/icon-nav-movies.svg";
 import navtvseries from "../public/assets/icon-nav-tv-series.svg";
 import navbookmark from "../public/assets/icon-nav-bookmark.svg";
 import iconsearch from "../public/assets/icon-search.svg";
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import Signup from "./signup";
 
 function Header() {
-  return (
+  const navigate = useLocation();
+
+  return navigate.pathname !== "/login" && navigate.pathname !== "/signup" ? (
     <>
       <Maincontainer>
         <Redicon src={redicon} />
@@ -37,7 +40,7 @@ function Header() {
       />
       <Outlet />
     </>
-  );
+  ) : null;
 }
 
 export default Header;
