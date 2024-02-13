@@ -7,13 +7,13 @@ import navtvseries from "../public/assets/icon-nav-tv-series.svg";
 import navbookmark from "../public/assets/icon-nav-bookmark.svg";
 import iconsearch from "../public/assets/icon-search.svg";
 import { Link, Outlet, useLocation } from "react-router-dom";
-import { useEffect } from "react";
-import Signup from "./signup";
 
 function Header() {
   const navigate = useLocation();
 
-  return navigate.pathname !== "/login" && navigate.pathname !== "/signup" ? (
+  return navigate.pathname !== "/login" &&
+    navigate.pathname !== "/signup" &&
+    navigate.pathname !== "/Login" ? (
     <>
       <Maincontainer>
         <Redicon src={redicon} />

@@ -1,19 +1,59 @@
 import styled from "styled-components";
 import icon from "../public/assets/logo.svg";
+import { Link, Outlet } from "react-router-dom";
+import { useState } from "react";
+
 function Login() {
+  const [email, setEmail] = useState("");
+  const [isValidEmail, setIsValidEmail] = useState(true);
+
+  const [password, setPassword] = useState("");
+  const [isValidPassword, setIsValidPassword] = useState(true);
+
+  const handleEmailChange = (event) => {
+    const newEmail = event.target.value;
+    setEmail(newEmail);
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    setIsValidEmail(emailRegex.test(newEmail));
+  };
+
+  const handlePasswordChange = (event) => {
+    const newEmail = event.target.value;
+    setPassword(newEmail);
+    const passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    setIsValidPassword(passwordRegex.test(newEmail));
+  };
   return (
     <Maincontainer>
       <Icon src={icon} />
       <Logincontainer>
         <Logintitle>Login</Logintitle>
-        <Inputemail placeholder="Email address" textColor="#FFFFFF" />
-        <Inputpassword placeholder="Password" textColor="#FFFFFF" />
-        <Button>Login to your account</Button>
+        <Inputemail
+          value={email}
+          placeholder="Email address"
+          textColor="#FFFFFF"
+          onChange={handleEmailChange}
+          style={{ borderColor: isValidEmail ? "" : "red" }}
+        />
+        <Inputpassword
+          value={password}
+          placeholder="Password"
+          textColor="#FFFFFF"
+          onChange={handlePasswordChange}
+          style={{ borderColor: isValidPassword ? "" : "red" }}
+        />
+        <Link style={{ textDecoration: "none" }} to="/home">
+          <Button>Login to your account</Button>
+        </Link>
         <Signupcard>
           <Acountcreate>Don’t have an account?</Acountcreate>
-          <Signup>Sign Up</Signup>
+          <Link style={{ textDecoration: "none" }} to="/signup">
+            <Signup>Sign Up</Signup>
+          </Link>
         </Signupcard>
       </Logincontainer>
+      <Outlet />
     </Maincontainer>
   );
 }

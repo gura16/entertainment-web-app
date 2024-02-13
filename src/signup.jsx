@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import icon from "../public/assets/logo.svg";
+import { Link, Outlet } from "react-router-dom";
 
 function Signup() {
   return (
@@ -13,9 +14,12 @@ function Signup() {
         <Button>Login to your account</Button>
         <Signupcard>
           <Haveaccount>Alread have an account?</Haveaccount>
-          <Login>Login</Login>
+          <Link style={{ textDecoration: "none" }} to="/login">
+            <Login>Login</Login>
+          </Link>
         </Signupcard>
       </Logincontainer>
+      <Outlet />
     </Maincontainer>
   );
 }
