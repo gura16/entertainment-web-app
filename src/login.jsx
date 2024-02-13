@@ -10,20 +10,36 @@ function Login() {
   const [password, setPassword] = useState("");
   const [isValidPassword, setIsValidPassword] = useState(true);
 
+  const [verification, setVerification] = useState(false);
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const passwordRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
   const handleEmailChange = (event) => {
     const newEmail = event.target.value;
     setEmail(newEmail);
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     setIsValidEmail(emailRegex.test(newEmail));
   };
 
   const handlePasswordChange = (event) => {
-    const newEmail = event.target.value;
-    setPassword(newEmail);
-    const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    setIsValidPassword(passwordRegex.test(newEmail));
+    const newPassword = event.target.value;
+    setPassword(newPassword);
+    setIsValidPassword(passwordRegex.test(newPassword));
   };
+
+  const handleButton = () => {
+    const testEmail = emailRegex.test(email);
+    const testPassword = passwordRegex.test(password);
+
+    if (testEmail && testPassword) {
+      setVerification(true);
+    } else {
+      setVerification(false);
+    }
+    console.log(verification);
+  };
+
   return (
     <Maincontainer>
       <Icon src={icon} />
@@ -43,7 +59,11 @@ function Login() {
           onChange={handlePasswordChange}
           style={{ borderColor: isValidPassword ? "" : "red" }}
         />
-        <Link style={{ textDecoration: "none" }} to="/home">
+        <Link
+          onClick={handleButton}
+          style={{ textDecoration: "none" }}
+          to={verification ? "/home" : "/login"}
+        >
           <Button>Login to your account</Button>
         </Link>
         <Signupcard>
