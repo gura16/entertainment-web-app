@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import icon from "../public/assets/logo.svg";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 function Login() {
@@ -10,11 +10,10 @@ function Login() {
   const [password, setPassword] = useState("");
   const [isValidPassword, setIsValidPassword] = useState(true);
 
-  const [verification, setVerification] = useState(false);
+  const navigate = useNavigate();
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const passwordRegex =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  const passwordRegex = /^.{8,}$/;
 
   const handleEmailChange = (event) => {
     const newEmail = event.target.value;
@@ -33,11 +32,8 @@ function Login() {
     const testPassword = passwordRegex.test(password);
 
     if (testEmail && testPassword) {
-      setVerification(true);
-    } else {
-      setVerification(false);
+      navigate("/home");
     }
-    console.log(verification);
   };
 
   return (
@@ -59,13 +55,7 @@ function Login() {
           onChange={handlePasswordChange}
           style={{ borderColor: isValidPassword ? "" : "red" }}
         />
-        <Link
-          onClick={handleButton}
-          style={{ textDecoration: "none" }}
-          to={verification ? "/home" : "/login"}
-        >
-          <Button>Login to your account</Button>
-        </Link>
+        <Button onClick={handleButton}>Login to your account</Button>
         <Signupcard>
           <Acountcreate>Don’t have an account?</Acountcreate>
           <Link style={{ textDecoration: "none" }} to="/signup">
