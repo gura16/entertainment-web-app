@@ -1,17 +1,77 @@
 import styled from "styled-components";
 import icon from "../public/assets/logo.svg";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 function Signup() {
+  const [email, setEmail] = useState("");
+  const [isValidEmail, setIsValidEmail] = useState(true);
+
+  const [password, setPassword] = useState("");
+  const [isValidPassword, setIsValidPassword] = useState(true);
+
+  const [repeatPassword, setRepeatPassword] = useState("");
+  const [isValidRepeatPassword, setIsValidRepeatPassword] = useState(true);
+
+  const navigate = useNavigate();
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const passwordRegex = /^.{8,}$/;
+
+  const handleEmailChange = (event) => {
+    const newEmail = event.target.value;
+    setEmail(newEmail);
+    setIsValidEmail(emailRegex.test(newEmail));
+  };
+
+  const handlePasswordChange = (event) => {
+    const newPassword = event.target.value;
+    setPassword(newPassword);
+    setIsValidPassword(passwordRegex.test(newPassword));
+  };
+
+  const handleRepeatPasswordChange = (event) => {
+    const newRepeatPassword = event.target.value;
+    setRepeatPassword(newRepeatPassword);
+    setIsValidRepeatPassword(passwordRegex.test(newRepeatPassword));
+  };
+
+  const handleButton = () => {
+    const testEmail = emailRegex.test(email);
+    const testPassword = passwordRegex.test(password);
+
+    if (testEmail && testPassword && repeatPassword === password) {
+      navigate("/home");
+    }
+  };
+
   return (
     <Maincontainer>
       <Icon src={icon} />
       <Logincontainer>
         <Signuptitle>Sign Up</Signuptitle>
-        <Inputemail placeholder="Email address" textColor="#FFFFFF" />
-        <Inputpassword placeholder="Password" textColor="#FFFFFF" />
-        <Repeatpassword placeholder="Password" textColor="#FFFFFF" />
-        <Button>Login to your account</Button>
+        <Inputemail
+          value={email}
+          placeholder="Email address"
+          textColor="#FFFFFF"
+          onChange={handleEmailChange}
+          style={{ borderColor: isValidEmail ? "" : "red" }}
+        />
+        <Inputpassword
+          value={password}
+          placeholder="Password"
+          textColor="#FFFFFF"
+          onChange={handlePasswordChange}
+          style={{ borderColor: isValidPassword ? "" : "red" }}
+        />
+        <Repeatpassword
+          value={repeatPassword}
+          placeholder="Repeat Password"
+          textColor="#FFFFFF"
+          onChange={handleRepeatPasswordChange}
+          style={{ borderColor: isValidRepeatPassword ? "" : "red" }}
+        />
+        <Button onClick={handleButton}>Login to your account</Button>
         <Signupcard>
           <Haveaccount>Alread have an account?</Haveaccount>
           <Link style={{ textDecoration: "none" }} to="/login">
