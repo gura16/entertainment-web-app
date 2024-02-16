@@ -55,16 +55,31 @@ const Maincontainer = styled.div`
   align-items: center;
   gap: 80px;
   padding: 0 20px;
+
+  @media screen and (min-width: 768px) {
+    width: 719px;
+    height: 72px;
+    border-radius: 15px;
+    margin-top: 15px;
+  }
 `;
 
 const Redicon = styled.img`
   width: 25px;
   height: 20px;
+  @media screen and (min-width: 768px) {
+    width: 32px;
+    height: 25.6px;
+  }
 `;
 
 const Manimage = styled.img`
   width: 24px;
   height: 24px;
+  @media screen and (min-width: 768px) {
+    width: 32px;
+    height: 32px;
+  }
 `;
 
 const Categorycard = styled.div`
@@ -72,27 +87,48 @@ const Categorycard = styled.div`
   height: 16px;
   display: flex;
   justify-content: space-between;
+
+  @media screen and (min-width: 768px) {
+    width: 172.92px;
+    height: 20px;
+  }
 `;
 
 const Navbookmark = styled.img`
   width: 16px;
   height: 16px;
   cursor: pointer;
+  @media screen and (min-width: 768px) {
+    width: 20px;
+    height: 20px;
+  }
 `;
 const Navhome = styled.img`
   width: 16px;
   height: 16px;
   cursor: pointer;
+  @media screen and (min-width: 768px) {
+    width: 20px;
+    height: 20px;
+  }
 `;
 const Navmovies = styled.img`
   width: 16px;
   height: 16px;
   cursor: pointer;
+  @media screen and (min-width: 768px) {
+    width: 20px;
+    height: 20px;
+  }
 `;
 const Navtvseries = styled.img`
   width: 16px;
   height: 16px;
   cursor: pointer;
+  @media screen and (min-width: 768px) {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 const Homesearch = styled.input`
