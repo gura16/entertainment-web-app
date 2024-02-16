@@ -85,6 +85,10 @@ const Maincontainer = styled.div`
   justify-content: center;
   margin-top: 30px;
   margin-bottom: 50px;
+
+  @media screen and (min-width: 768px) {
+    align-items: center;
+  }
 `;
 
 const Logincontainer = styled.div`
@@ -97,6 +101,11 @@ const Logincontainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 25px;
+
+  @media screen and (min-width: 768px) {
+    width: 400px;
+    height: 373px;
+  }
 `;
 
 const Logintitle = styled.p`
@@ -109,6 +118,13 @@ const Logintitle = styled.p`
   line-height: 40px;
   letter-spacing: -0.5px;
   text-align: left;
+
+  @media screen and (min-width: 768px) {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: -0.5px;
+  }
 `;
 
 const Inputemail = styled.input`
@@ -139,6 +155,11 @@ const Inputemail = styled.input`
   &:focus {
     outline: none;
     box-shadow: 0px 1px 0px 0px #5a698f;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 336px;
+    height: 37px;
   }
 `;
 
@@ -171,6 +192,11 @@ const Inputpassword = styled.input`
     outline: none;
     box-shadow: 0px 1px 0px 0px #5a698f;
   }
+
+  @media screen and (min-width: 768px) {
+    width: 336px;
+    height: 37px;
+  }
 `;
 
 const Button = styled.div`
@@ -192,6 +218,11 @@ const Button = styled.div`
   &:hover {
     background-color: white;
     color: black;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 336px;
+    height: 48px;
   }
 `;
 
