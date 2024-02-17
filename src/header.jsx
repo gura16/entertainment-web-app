@@ -6,6 +6,10 @@ import navmovies from "../public/assets/icon-nav-movies.svg";
 import navtvseries from "../public/assets/icon-nav-tv-series.svg";
 import navbookmark from "../public/assets/icon-nav-bookmark.svg";
 import iconsearch from "../public/assets/icon-search.svg";
+import navhomewhite from "../public/assets/icon-nav-home-white.svg";
+import navmovieswhite from "../public/assets/icon-nav-movies-white.svg";
+import navtvserieswhite from "../public/assets/icon-nav-tvseries-white.svg";
+import navbookmarkwhite from "../public/assets/icon-nav-bookmark-white.svg";
 import { Link, Outlet, useLocation } from "react-router-dom";
 
 function Header() {
@@ -19,16 +23,32 @@ function Header() {
         <Redicon src={redicon} />
         <Categorycard>
           <Link to="/home">
-            <Navhome src={navhome} />
+            <Navhome
+              src={navigate.pathname === "/home" ? navhomewhite : navhome}
+            />
           </Link>
           <Link to="/movie">
-            <Navmovies src={navmovies} />
+            <Navmovies
+              src={navigate.pathname === "/movie" ? navmovieswhite : navmovies}
+            />
           </Link>
           <Link to="/tvseries">
-            <Navtvseries src={navtvseries} />
+            <Navtvseries
+              src={
+                navigate.pathname === "/tvseries"
+                  ? navtvserieswhite
+                  : navtvseries
+              }
+            />
           </Link>
-          <Link to="bookmarked">
-            <Navbookmark src={navbookmark} />
+          <Link to="/bookmarked">
+            <Navbookmark
+              src={
+                navigate.pathname === "/bookmarked"
+                  ? navbookmarkwhite
+                  : navbookmark
+              }
+            />
           </Link>
         </Categorycard>
         <Manimage src={manimage} />
