@@ -18,6 +18,9 @@ export default Home;
 
 const Maincontainer = styled.div`
   padding-left: 15px;
+  @media screen and (min-width: 768px) {
+    padding-left: 30px;
+  }
 `;
 
 const StyledSliderContainer = styled.div`

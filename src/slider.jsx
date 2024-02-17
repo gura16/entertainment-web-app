@@ -18,11 +18,6 @@ const MySlider = () => {
     color: "#333",
   };
 
-  const swiperSlides = {
-    width: "240px",
-    height: "140px",
-  };
-
   return (
     <>
       <Trendingtitle>Trending</Trendingtitle>
@@ -33,12 +28,13 @@ const MySlider = () => {
         pagination={{ clickable: true }}
       >
         {trendingItems.map((item, index) => (
-          <SwiperSlide key={index} style={swiperSlides}>
+          <SwiperSlide key={index}>
             <Trendingbox>
               <Trendingcard
-                style={{
-                  backgroundImage: `url(${item.thumbnail.trending.small})`,
-                }}
+                image={item.thumbnail.trending}
+                // style={{
+                //   backgroundImage: `url(${item.thumbnail.trending.small})`,
+                // }}
               >
                 <Titelscard>
                   <Yearscard>
@@ -89,6 +85,13 @@ const Trendingtitle = styled.p`
   text-align: left;
   color: white;
   margin-bottom: 30px;
+  @media screen and (min-width: 768px) {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: -0.5px;
+    text-align: left;
+  }
 `;
 
 const Trendingcard = styled.div`
@@ -98,6 +101,13 @@ const Trendingcard = styled.div`
   border-radius: 5%;
   background-size: cover;
   position: relative;
+  background-image: ${(props) => `url(${props.image.small})`};
+
+  @media screen and (min-width: 768px) {
+    width: 470px;
+    height: 230px;
+    background-image: ${(props) => `url(${props.image.large})`};
+  }
 `;
 
 const Trendingbox = styled.div`
@@ -110,6 +120,10 @@ const Titelscard = styled.div`
   gap: 6px;
   margin-top: 90px;
   padding: 0 15px;
+  @media screen and (min-width: 768px) {
+    margin-top: 155px;
+    padding: 0 23px;
+  }
 `;
 
 const Yearscard = styled.div`
@@ -119,8 +133,6 @@ const Yearscard = styled.div`
 `;
 
 const Year = styled.p`
-  width: 26px;
-  height: 15px;
   opacity: 75%;
   font-family: "Outfit", sans-serif;
   font-size: 12px;
@@ -128,6 +140,13 @@ const Year = styled.p`
   line-height: 15px;
   letter-spacing: 0px;
   text-align: left;
+  @media screen and (min-width: 768px) {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
 `;
 
 const Point = styled.div`
@@ -139,19 +158,26 @@ const Point = styled.div`
 `;
 
 const Category = styled.p`
-  height: 15px;
   opacity: 75%;
   font-family: "Outfit", sans-serif;
   font-size: 11px;
   font-weight: 400;
   line-height: 14px;
   letter-spacing: 0px;
+  @media screen and (min-width: 768px) {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0px;
+  }
 `;
 
 const Iconmovie = styled.img`
   width: 12px;
   height: 12px;
   opacity: 75%;
+  @media screen and (min-width: 768px) {
+  }
 `;
 
 const Rating = styled.p`
@@ -162,6 +188,13 @@ const Rating = styled.p`
   letter-spacing: 0px;
   text-align: left;
   opacity: 75%;
+  @media screen and (min-width: 768px) {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
 `;
 
 const Title = styled.p`
@@ -171,6 +204,13 @@ const Title = styled.p`
   line-height: 19px;
   letter-spacing: 0px;
   text-align: left;
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
 `;
 
 const Icon_bookmark_empty = styled.img`

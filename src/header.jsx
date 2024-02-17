@@ -170,4 +170,7 @@ const Homesearch = styled.input`
   &:focus {
     outline: none;
   }
+  @media screen and (min-width: 768px) {
+    margin-left: 30px;
+  }
 `;
