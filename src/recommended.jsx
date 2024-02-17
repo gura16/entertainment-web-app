@@ -69,6 +69,9 @@ const Maincontainer1 = styled.div`
   row-gap: 30px;
   margin-top: 30px;
   margin-bottom: 30px;
+  @media screen and (min-width: 768px) {
+    grid-template-columns: auto auto auto;
+  }
 `;
 
 const Eachcontainer = styled.div`
@@ -83,6 +86,12 @@ const Imgcard = styled.div`
   height: 110px;
   border-radius: 10px;
   background-image: ${(props) => `url(${props.img.thumbnail.regular.small})`};
+  @media screen and (min-width: 768px) {
+    width: 220px;
+    height: 140px;
+    background-image: ${(props) =>
+      `url(${props.img.thumbnail.regular.medium})`};
+  }
 `;
 const Infocard = styled.div`
   display: flex;
@@ -99,6 +108,13 @@ const Year = styled.p`
   text-align: left;
   color: white;
   opacity: 75%;
+  @media screen and (min-width: 768px) {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
 `;
 
 const Point = styled.div`
@@ -124,6 +140,13 @@ const Category = styled.p`
   line-height: 14px;
   letter-spacing: 0px;
   color: white;
+  @media screen and (min-width: 768px) {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
 `;
 
 const Rating = styled.p`
@@ -135,6 +158,13 @@ const Rating = styled.p`
   text-align: left;
   opacity: 75%;
   color: white;
+  @media screen and (min-width: 768px) {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
 `;
 
 const Title = styled.p`
@@ -145,6 +175,13 @@ const Title = styled.p`
   letter-spacing: 0px;
   text-align: left;
   color: white;
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
 `;
 
 const Circle = styled.div`
@@ -158,6 +195,9 @@ const Circle = styled.div`
   justify-content: center;
   margin-top: 10px;
   margin-left: 123px;
+  @media screen and (min-width: 768px) {
+    margin-left: 170px;
+  }
 `;
 
 const Icon_bookmark_empty = styled.img`

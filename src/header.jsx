@@ -161,7 +161,7 @@ const Homesearch = styled.input`
   background-size: 24px;
   background-repeat: no-repeat;
   border: none;
-  padding-left: 30px;
+  padding-left: 40px;
   &:focus,
   &:not(:placeholder-shown) {
     color: #ffffff;
@@ -171,6 +171,15 @@ const Homesearch = styled.input`
     outline: none;
   }
   @media screen and (min-width: 768px) {
+    background-position: left;
+
     margin-left: 30px;
+    width: 381px;
+    height: 32px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0px;
+    text-align: left;
   }
 `;

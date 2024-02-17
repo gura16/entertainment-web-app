@@ -30,12 +30,7 @@ const MySlider = () => {
         {trendingItems.map((item, index) => (
           <SwiperSlide key={index}>
             <Trendingbox>
-              <Trendingcard
-                image={item.thumbnail.trending}
-                // style={{
-                //   backgroundImage: `url(${item.thumbnail.trending.small})`,
-                // }}
-              >
+              <Trendingcard image={item.thumbnail.trending}>
                 <Titelscard>
                   <Yearscard>
                     <Year>{item.year}</Year>
