@@ -2,10 +2,12 @@ import styled from "styled-components";
 import { useEffect, useState } from "react";
 import MySlider from "./slider";
 import Recommended from "./recommended";
+import Homesearch from "./homesearch";
 
 function Home(props) {
   return (
     <Maincontainer>
+      <Homesearch />
       <StyledSliderContainer>
         <MySlider />
       </StyledSliderContainer>

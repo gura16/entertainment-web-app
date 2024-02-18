@@ -5,7 +5,6 @@ import navhome from "../public/assets/icon-nav-home.svg";
 import navmovies from "../public/assets/icon-nav-movies.svg";
 import navtvseries from "../public/assets/icon-nav-tv-series.svg";
 import navbookmark from "../public/assets/icon-nav-bookmark.svg";
-import iconsearch from "../public/assets/icon-search.svg";
 import navhomewhite from "../public/assets/icon-nav-home-white.svg";
 import navmovieswhite from "../public/assets/icon-nav-movies-white.svg";
 import navtvserieswhite from "../public/assets/icon-nav-tvseries-white.svg";
@@ -53,11 +52,6 @@ function Header() {
         </Categorycard>
         <Manimage src={manimage} />
       </Maincontainer>
-      <Homesearch
-        src={iconsearch}
-        placeholder="Search for movies or TV series"
-        textColor="#FFFFFF"
-      />
       <Outlet />
     </>
   ) : null;
@@ -81,6 +75,15 @@ const Maincontainer = styled.div`
     height: 72px;
     border-radius: 15px;
     margin-top: 15px;
+  }
+  @media screen and (min-width: 1040px) {
+    width: 96px;
+    height: 960px;
+    flex-direction: column;
+    justify-content: start;
+    margin: 0;
+    padding: 30px 20px;
+    margin-top: 20px;
   }
 `;
 
@@ -111,6 +114,15 @@ const Categorycard = styled.div`
   @media screen and (min-width: 768px) {
     width: 172.92px;
     height: 20px;
+  }
+
+  @media screen and (min-width: 1040px) {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    width: 0px;
+    margin-top: 10px;
+    margin-bottom: 650px;
   }
 `;
 
@@ -148,38 +160,5 @@ const Navtvseries = styled.img`
   @media screen and (min-width: 768px) {
     width: 20px;
     height: 20px;
-  }
-`;
-
-const Homesearch = styled.input`
-  margin-top: 20px;
-  margin-left: 10px;
-  width: 257px;
-  height: 24px;
-  background-color: #10141e;
-  background-image: url(${iconsearch});
-  background-size: 24px;
-  background-repeat: no-repeat;
-  border: none;
-  padding-left: 40px;
-  &:focus,
-  &:not(:placeholder-shown) {
-    color: #ffffff;
-  }
-
-  &:focus {
-    outline: none;
-  }
-  @media screen and (min-width: 768px) {
-    background-position: left;
-
-    margin-left: 30px;
-    width: 381px;
-    height: 32px;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 30px;
-    letter-spacing: 0px;
-    text-align: left;
   }
 `;

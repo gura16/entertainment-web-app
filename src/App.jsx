@@ -13,10 +13,12 @@ import Tvseries from "./tvseries";
 import Bookmarkd from "./bookmarkd";
 import Login from "./login";
 import Signup from "./signup";
+import styled from "styled-components";
+import Homesearch from "./homesearch";
 
 function App() {
   return (
-    <>
+    <Maincard>
       <GlobalStyles />
       <Router>
         <Header />
@@ -24,17 +26,24 @@ function App() {
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/search" element={<Homesearch />} />
           <Route path="/home" element={<Home data={jsonData} />} />
           <Route path="/movie" element={<Movies data={jsonData} />} />
           <Route path="/tvseries" element={<Tvseries data={jsonData} />} />
           <Route path="/bookmarked" element={<Bookmarkd data={jsonData} />} />
         </Routes>
       </Router>
-    </>
+    </Maincard>
   );
 }
 
 export default App;
+
+const Maincard = styled.div`
+  @media screen and (min-width: 1040px) {
+    display: flex;
+  }
+`;
 
 const GlobalStyles = createGlobalStyle`body {
     background-color:  #10141E}

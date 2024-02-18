@@ -72,6 +72,9 @@ const Maincontainer1 = styled.div`
   @media screen and (min-width: 768px) {
     grid-template-columns: auto auto auto;
   }
+  @media screen and (min-width: 1040px) {
+    grid-template-columns: auto auto auto auto;
+  }
 `;
 
 const Eachcontainer = styled.div`

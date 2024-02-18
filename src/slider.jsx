@@ -16,6 +16,7 @@ const MySlider = () => {
   const swiperStyles = {
     backgroundColor: "#10141E",
     color: "#333",
+    width: "200vh",
   };
 
   return (
@@ -23,9 +24,20 @@ const MySlider = () => {
       <Trendingtitle>Trending</Trendingtitle>
       <Swiper
         style={swiperStyles}
-        spaceBetween={10}
-        slidesPerView={1.5}
         pagination={{ clickable: true }}
+        breakpoints={{
+          // when window width is <= 499px
+          768: {
+            slidesPerView: 1, // Adjust the number of slides per view for smaller screens
+            spaceBetween: 5, // Adjust the space between slides for smaller screens
+          },
+          // when window width is >= 500px and <= 999px
+          1000: {
+            slidesPerView: 1.5, // Default number of slides per view
+            spaceBetween: 10, // Default space between slides
+          },
+          // Add more breakpoints as needed
+        }}
       >
         {trendingItems.map((item, index) => (
           <SwiperSlide key={index}>
