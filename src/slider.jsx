@@ -8,6 +8,7 @@ import icon_movie from "../public/assets/icon-category-movie.svg";
 import icon_tvseries from "../public/assets/icon-category-tv.svg";
 import icon_bookmark_empty from "../public/assets/icon-bookmark-empty.svg";
 import icon_bookmark_full from "../public/assets/icon-bookmark-full.svg";
+import "./slider.css";
 
 const MySlider = (props) => {
   const trendingItems = jsonData.filter((item) => item.isTrending);
@@ -16,13 +17,13 @@ const MySlider = (props) => {
   const swiperStyles = {
     backgroundColor: "#10141E",
     color: "#333",
-    width: "200vh",
   };
 
   return (
     <>
       <Trendingtitle>Trending</Trendingtitle>
       <Swiper
+        className="swiper"
         style={swiperStyles}
         pagination={{ clickable: true }}
         breakpoints={{
@@ -40,7 +41,6 @@ const MySlider = (props) => {
           1440: {
             slidesPerView: 3.5, // Default number of slides per view
             spaceBetween: 50, // Default space between slides
-            width: "900vw",
           },
         }}
       >

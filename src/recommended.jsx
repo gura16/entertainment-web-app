@@ -103,6 +103,12 @@ const Imgcard = styled.div`
     background-image: ${(props) =>
       `url(${props.img.thumbnail.regular.medium})`};
   }
+
+  @media screen and (min-width: 768px) {
+    width: 260px;
+    height: 174px;
+    background-image: ${(props) => `url(${props.img.thumbnail.regular.large})`};
+  }
 `;
 const Infocard = styled.div`
   display: flex;
@@ -208,6 +214,9 @@ const Circle = styled.div`
   margin-left: 123px;
   @media screen and (min-width: 768px) {
     margin-left: 170px;
+  }
+  @media screen and (min-width: 1040px) {
+    margin-left: 210px;
   }
 `;
 

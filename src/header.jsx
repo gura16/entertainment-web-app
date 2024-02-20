@@ -84,6 +84,7 @@ const Maincontainer = styled.div`
     margin: 0;
     padding: 30px 20px;
     margin-top: 20px;
+    margin-left: 10px;
   }
 `;
 
