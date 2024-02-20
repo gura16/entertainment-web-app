@@ -9,7 +9,7 @@ import icon_tvseries from "../public/assets/icon-category-tv.svg";
 import icon_bookmark_empty from "../public/assets/icon-bookmark-empty.svg";
 import icon_bookmark_full from "../public/assets/icon-bookmark-full.svg";
 
-const MySlider = () => {
+const MySlider = (props) => {
   const trendingItems = jsonData.filter((item) => item.isTrending);
   const [movies, setMovies] = useState(trendingItems);
 
@@ -27,55 +27,66 @@ const MySlider = () => {
         pagination={{ clickable: true }}
         breakpoints={{
           // when window width is <= 499px
-          768: {
-            slidesPerView: 1, // Adjust the number of slides per view for smaller screens
-            spaceBetween: 5, // Adjust the space between slides for smaller screens
+          375: {
+            slidesPerView: 1.5, // Adjust the number of slides per view for smaller screens
+            spaceBetween: 50, // Adjust the space between slides for smaller screens
           },
           // when window width is >= 500px and <= 999px
-          1000: {
-            slidesPerView: 1.5, // Default number of slides per view
-            spaceBetween: 10, // Default space between slides
+          1040: {
+            slidesPerView: 2.5, // Default number of slides per view
+            spaceBetween: 50, // Default space between slides
           },
           // Add more breakpoints as needed
+          1440: {
+            slidesPerView: 3.5, // Default number of slides per view
+            spaceBetween: 50, // Default space between slides
+            width: "900vw",
+          },
         }}
       >
-        {trendingItems.map((item, index) => (
-          <SwiperSlide key={index}>
-            <Trendingbox>
-              <Trendingcard image={item.thumbnail.trending}>
-                <Titelscard>
-                  <Yearscard>
-                    <Year>{item.year}</Year>
-                    <Point></Point>
-                    <Iconmovie
+        {trendingItems
+          .filter((item) =>
+            !props.search
+              ? true
+              : item.title.toLowerCase().includes(props.search)
+          )
+          .map((item, index) => (
+            <SwiperSlide key={index}>
+              <Trendingbox>
+                <Trendingcard image={item.thumbnail.trending}>
+                  <Titelscard>
+                    <Yearscard>
+                      <Year>{item.year}</Year>
+                      <Point></Point>
+                      <Iconmovie
+                        src={
+                          item.category === "Movie" ? icon_movie : icon_tvseries
+                        }
+                      ></Iconmovie>
+                      <Category>{item.category}</Category>
+                      <Point></Point>
+                      <Rating>{item.rating}</Rating>
+                    </Yearscard>
+                    <Title>{item.title}</Title>
+                  </Titelscard>
+                  <Circle
+                    onClick={() => {
+                      movies[index].isBookmarked = !movies[index].isBookmarked;
+                      setMovies([...movies]);
+                    }}
+                  >
+                    <Icon_bookmark_empty
                       src={
-                        item.category === "Movie" ? icon_movie : icon_tvseries
+                        item.isBookmarked
+                          ? icon_bookmark_full
+                          : icon_bookmark_empty
                       }
-                    ></Iconmovie>
-                    <Category>{item.category}</Category>
-                    <Point></Point>
-                    <Rating>{item.rating}</Rating>
-                  </Yearscard>
-                  <Title>{item.title}</Title>
-                </Titelscard>
-                <Circle
-                  onClick={() => {
-                    movies[index].isBookmarked = !movies[index].isBookmarked;
-                    setMovies([...movies]);
-                  }}
-                >
-                  <Icon_bookmark_empty
-                    src={
-                      item.isBookmarked
-                        ? icon_bookmark_full
-                        : icon_bookmark_empty
-                    }
-                  />
-                </Circle>
-              </Trendingcard>
-            </Trendingbox>
-          </SwiperSlide>
-        ))}
+                    />
+                  </Circle>
+                </Trendingcard>
+              </Trendingbox>
+            </SwiperSlide>
+          ))}
       </Swiper>
     </>
   );

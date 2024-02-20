@@ -1,13 +1,14 @@
 import styled from "styled-components";
 import iconsearch from "../public/assets/icon-search.svg";
 
-function Homesearch() {
+function Homesearch(props) {
   return (
     <>
       <Search
         src={iconsearch}
         placeholder="Search for movies or TV series"
         textColor="#FFFFFF"
+        onChange={(event) => props.setSearch(event.target.value)}
       />
     </>
   );
@@ -48,7 +49,7 @@ const Search = styled.input`
   }
 
   @media screen and (min-width: 1040px) {
-    margin-left: 0px;
+    margin-left: 30px;
     margin-top: 45px;
   }
 `;

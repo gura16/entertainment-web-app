@@ -15,23 +15,40 @@ import Login from "./login";
 import Signup from "./signup";
 import styled from "styled-components";
 import Homesearch from "./homesearch";
+import { useState } from "react";
 
 function App() {
+  const [search, setSearch] = useState("");
+
   return (
     <Maincard>
       <GlobalStyles />
       <Router>
         <Header />
-        <Routes>
-          <Route path="/" element={<Navigate to="/login" />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/search" element={<Homesearch />} />
-          <Route path="/home" element={<Home data={jsonData} />} />
-          <Route path="/movie" element={<Movies data={jsonData} />} />
-          <Route path="/tvseries" element={<Tvseries data={jsonData} />} />
-          <Route path="/bookmarked" element={<Bookmarkd data={jsonData} />} />
-        </Routes>
+        <div>
+          <Homesearch setSearch={setSearch} />
+          <Routes>
+            <Route path="/" element={<Navigate to="/login" />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route
+              path="/home"
+              element={<Home search={search} data={jsonData} />}
+            />
+            <Route
+              path="/movie"
+              element={<Movies search={search} data={jsonData} />}
+            />
+            <Route
+              path="/tvseries"
+              element={<Tvseries search={search} data={jsonData} />}
+            />
+            <Route
+              path="/bookmarked"
+              element={<Bookmarkd search={search} data={jsonData} />}
+            />
+          </Routes>
+        </div>
       </Router>
     </Maincard>
   );

@@ -23,35 +23,43 @@ function Bookmarkd(props) {
       <Recomendedtitle>Bookmarked Movies</Recomendedtitle>
 
       <Maincontainer1>
-        {movies.map((item, index) => (
-          <Eachcontainer key={index}>
-            <Imgcard img={item}>
-              <Circle
-                onClick={() => {
-                  movies[index].isBookmarked = !movies[index].isBookmarked;
-                  setMovies([...movies]);
-                }}
-              >
-                <Icon_bookmark_empty
-                  src={
-                    item.isBookmarked ? icon_bookmark_full : icon_bookmark_empty
-                  }
-                />
-              </Circle>
-            </Imgcard>
-            <Infocard>
-              <Year>{item.year}</Year>
-              <Point></Point>
-              <Iconmovie
-                src={item.category === "Movie" ? icon_movie : icon_tvseries}
-              ></Iconmovie>
-              <Category>{item.category}</Category>
-              <Point></Point>
-              <Rating>{item.rating}</Rating>
-            </Infocard>
-            <Title>{item.title}</Title>
-          </Eachcontainer>
-        ))}
+        {movies
+          .filter((item) =>
+            !props.search
+              ? true
+              : item.title.toLowerCase().includes(props.search)
+          )
+          .map((item, index) => (
+            <Eachcontainer key={index}>
+              <Imgcard img={item}>
+                <Circle
+                  onClick={() => {
+                    movies[index].isBookmarked = !movies[index].isBookmarked;
+                    setMovies([...movies]);
+                  }}
+                >
+                  <Icon_bookmark_empty
+                    src={
+                      item.isBookmarked
+                        ? icon_bookmark_full
+                        : icon_bookmark_empty
+                    }
+                  />
+                </Circle>
+              </Imgcard>
+              <Infocard>
+                <Year>{item.year}</Year>
+                <Point></Point>
+                <Iconmovie
+                  src={item.category === "Movie" ? icon_movie : icon_tvseries}
+                ></Iconmovie>
+                <Category>{item.category}</Category>
+                <Point></Point>
+                <Rating>{item.rating}</Rating>
+              </Infocard>
+              <Title>{item.title}</Title>
+            </Eachcontainer>
+          ))}
       </Maincontainer1>
       <Recomendedtitle>Bookmarked TV Series</Recomendedtitle>
 
