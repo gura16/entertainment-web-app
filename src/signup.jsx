@@ -105,6 +105,10 @@ const Maincontainer = styled.div`
   @media screen and (min-width: 768px) {
     align-items: center;
   }
+  @media screen and (min-width: 1040px) {
+    position: absolute;
+    right: 40%;
+  }
 `;
 
 const Logincontainer = styled.div`

@@ -1,8 +1,12 @@
 import styled from "styled-components";
 import iconsearch from "../public/assets/icon-search.svg";
+import { useLocation } from "react-router-dom";
 
 function Homesearch(props) {
-  return (
+  const navigate = useLocation();
+  return navigate.pathname !== "/login" &&
+    navigate.pathname !== "/signup" &&
+    navigate.pathname !== "/Login" ? (
     <>
       <Search
         src={iconsearch}
@@ -11,7 +15,7 @@ function Homesearch(props) {
         onChange={(event) => props.setSearch(event.target.value)}
       />
     </>
-  );
+  ) : null;
 }
 
 export default Homesearch;
