@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import iconsearch from "../public/assets/icon-search.svg";
+
 import { useLocation } from "react-router-dom";
 
 function Homesearch(props) {
@@ -9,7 +9,6 @@ function Homesearch(props) {
     navigate.pathname !== "/Login" ? (
     <>
       <Search
-        src={iconsearch}
         placeholder="Search for movies or TV series"
         textColor="#FFFFFF"
         onChange={(event) => props.setSearch(event.target.value)}
@@ -26,7 +25,7 @@ const Search = styled.input`
   width: 257px;
   height: 24px;
   background-color: #10141e;
-  background-image: url(${iconsearch});
+  background-image: url("./assets/icon-search.svg");
   background-size: 24px;
   background-repeat: no-repeat;
   border: none;

@@ -212,6 +212,7 @@ const Circle = styled.div`
   justify-content: center;
   margin-top: 10px;
   margin-left: 123px;
+  cursor: pointer;
   @media screen and (min-width: 768px) {
     margin-left: 170px;
   }
