@@ -77,6 +77,7 @@ const Maincontainer1 = styled.div`
   row-gap: 30px;
   margin-top: 30px;
   margin-bottom: 30px;
+
   @media screen and (min-width: 768px) {
     grid-template-columns: auto auto auto;
   }
@@ -93,19 +94,19 @@ const Eachcontainer = styled.div`
 
 const Imgcard = styled.div`
   background-size: cover;
-  width: 164px;
+  width: 90%;
   height: 110px;
   border-radius: 10px;
   background-image: ${(props) => `url(${props.img.thumbnail.regular.small})`};
   @media screen and (min-width: 768px) {
-    width: 220px;
+    width: 80%;
     height: 140px;
     background-image: ${(props) =>
       `url(${props.img.thumbnail.regular.medium})`};
   }
 
-  @media screen and (min-width: 768px) {
-    width: 260px;
+  @media screen and (min-width: 1040px) {
+    width: 80%;
     height: 174px;
     background-image: ${(props) => `url(${props.img.thumbnail.regular.large})`};
   }
@@ -211,13 +212,14 @@ const Circle = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 10px;
-  margin-left: 123px;
+  margin-left: 80%;
   cursor: pointer;
   @media screen and (min-width: 768px) {
-    margin-left: 170px;
+    margin-left: 80%;
   }
   @media screen and (min-width: 1040px) {
-    margin-left: 210px;
+    margin-left: 80%;
+    cursor: pointer;
   }
 `;
 
