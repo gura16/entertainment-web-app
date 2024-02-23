@@ -40,7 +40,6 @@ const Search = styled.input`
   }
   @media screen and (min-width: 768px) {
     background-position: left;
-
     margin-left: 30px;
     width: 381px;
     height: 32px;

@@ -27,20 +27,19 @@ const MySlider = (props) => {
         style={swiperStyles}
         pagination={{ clickable: true }}
         breakpoints={{
-          // when window width is <= 499px
           375: {
-            slidesPerView: 1.5, // Adjust the number of slides per view for smaller screens
-            spaceBetween: 50, // Adjust the space between slides for smaller screens
+            slidesPerView: 1.5,
+            spaceBetween: 50,
           },
-          // when window width is >= 500px and <= 999px
+
           1040: {
-            slidesPerView: 2.5, // Default number of slides per view
-            spaceBetween: 50, // Default space between slides
+            slidesPerView: 2.5,
+            spaceBetween: 50,
           },
-          // Add more breakpoints as needed
+
           1440: {
-            slidesPerView: 3.5, // Default number of slides per view
-            spaceBetween: 50, // Default space between slides
+            slidesPerView: 3.5,
+            spaceBetween: 50,
           },
         }}
       >

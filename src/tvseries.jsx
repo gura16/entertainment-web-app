@@ -61,14 +61,14 @@ export default Tvseries;
 
 const Recomendedtitle = styled.p`
   font-family: "Outfit", sans-serif;
-  font-size: 20px;
+  font-size: 32px;
   font-weight: 400;
-  line-height: 25px;
-  letter-spacing: -0.3125px;
+  line-height: 40px;
+  letter-spacing: -0.5px;
   text-align: left;
   color: white;
-  margin-top: 30px;
   padding-left: 15px;
+  margin-top: 30px;
 `;
 
 const Maincontainer1 = styled.div`
@@ -83,7 +83,7 @@ const Maincontainer1 = styled.div`
   }
   @media screen and (min-width: 1040px) {
     grid-template-columns: auto auto auto auto;
-    width: 90vw;
+    width: 95vw;
   }
 `;
 

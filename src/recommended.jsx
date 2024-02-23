@@ -83,6 +83,7 @@ const Maincontainer1 = styled.div`
   }
   @media screen and (min-width: 1040px) {
     grid-template-columns: auto auto auto auto;
+    width: 90vw;
   }
 `;
 
