@@ -102,14 +102,14 @@ export default Bookmarkd;
 
 const Recomendedtitle = styled.p`
   font-family: "Outfit", sans-serif;
-  font-size: 20px;
+  font-size: 32px;
   font-weight: 400;
-  line-height: 25px;
-  letter-spacing: -0.3125px;
+  line-height: 40px;
+  letter-spacing: -0.5px;
   text-align: left;
   color: white;
+  padding-left: 15px;
   margin-top: 30px;
-  padding: 15px;
 `;
 
 const Maincontainer1 = styled.div`
@@ -261,6 +261,9 @@ const Circle = styled.div`
   }
   @media screen and (min-width: 1040px) {
     margin-left: 80%;
+  }
+  &:hover {
+    background-color: #878383;
   }
 `;
 

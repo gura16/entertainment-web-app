@@ -247,4 +247,8 @@ const Circle = styled.div`
   position: absolute;
   top: 10px;
   right: 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: #878383;
+  }
 `;

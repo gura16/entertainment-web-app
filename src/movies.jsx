@@ -221,6 +221,9 @@ const Circle = styled.div`
   @media screen and (min-width: 1040px) {
     margin-left: 80%;
   }
+  &:hover {
+    background-color: #878383;
+  }
 `;
 
 const Icon_bookmark_empty = styled.img`

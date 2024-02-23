@@ -221,6 +221,9 @@ const Circle = styled.div`
   @media screen and (min-width: 1040px) {
     margin-left: 80%;
     cursor: pointer;
+    &:hover {
+      background-color: #878383;
+    }
   }
 `;
 
