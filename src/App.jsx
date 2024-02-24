@@ -66,7 +66,8 @@ const GlobalStyles = createGlobalStyle`body {
 
     overflow-x: hidden;
     max-width: 100vw;
-    background-color:  #10141E}
+    background-color:  
+#10141E}
     
     *{
       margin: 0;

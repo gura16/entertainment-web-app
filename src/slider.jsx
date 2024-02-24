@@ -8,6 +8,7 @@ import icon_movie from "../public/assets/icon-category-movie.svg";
 import icon_tvseries from "../public/assets/icon-category-tv.svg";
 import icon_bookmark_empty from "../public/assets/icon-bookmark-empty.svg";
 import icon_bookmark_full from "../public/assets/icon-bookmark-full.svg";
+import playimage from "../public/assets/icon-play.svg";
 import "./slider.css";
 
 const MySlider = (props) => {
@@ -83,6 +84,12 @@ const MySlider = (props) => {
                     />
                   </Circle>
                 </Trendingcard>
+                <Hover>
+                  <Playcard>
+                    <Playimg src={playimage} />
+                    <Playtext>Play</Playtext>
+                  </Playcard>
+                </Hover>
               </Trendingbox>
             </SwiperSlide>
           ))}
@@ -93,6 +100,15 @@ const MySlider = (props) => {
 
 export default MySlider;
 
+const Hover = styled.div`
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  border-radius: 13px;
+  height: 230px;
+  position: absolute;
+  display: none;
+  z-index: 0;
+`;
 const Trendingtitle = styled.p`
   font-family: "Outfit", sans-serif;
   font-size: 20px;
@@ -123,12 +139,18 @@ const Trendingcard = styled.div`
   @media screen and (min-width: 768px) {
     width: 470px;
     height: 230px;
+    cursor: pointer;
     background-image: ${(props) => `url(${props.image.large})`};
+
+    &:hover + ${Hover} {
+      display: inline;
+    }
   }
 `;
 
 const Trendingbox = styled.div`
   display: flex;
+  position: relative;
 `;
 
 const Titelscard = styled.div`
@@ -245,10 +267,46 @@ const Circle = styled.div`
   align-items: center;
   justify-content: center;
   position: absolute;
+  z-index: 1;
   top: 10px;
   right: 10px;
   cursor: pointer;
   &:hover {
     background-color: #878383;
   }
+`;
+
+// const Hover = styled.div`
+//   background: rgba(0, 0, 0, 0.5);
+//   width: 100%;
+//   border-radius: 13px;
+//   height: 230px;
+//   position: absolute;
+//   display: none;
+// `;
+
+const Playimg = styled.img``;
+
+const Playcard = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.25);
+  width: 117px;
+  height: 48px;
+  border-radius: 25px;
+  position: absolute;
+  left: 35%;
+  top: 40%;
+`;
+
+const Playtext = styled.p`
+  font-family: "Outfit", sans-serif;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0px;
+  text-align: left;
 `;
