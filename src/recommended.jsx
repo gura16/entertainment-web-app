@@ -72,7 +72,7 @@ export default Recommended;
 const Hovercard = styled.div`
   position: relative;
   @media screen and (min-width: 1040px) {
-    width: 80%;
+    width: 95%;
     height: 174px;
     cursor: pointer;
   }
@@ -287,8 +287,10 @@ const Playcard = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 70px;
-  margin-left: 70px;
+  margin-top: 60px;
+  margin-left: 35%;
+  text-align: center;
+  top: 50px;
   gap: 20px;
   width: 100px;
   height: 40px;
