@@ -103,12 +103,13 @@ export default MySlider;
 const Hover = styled.div`
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
+  height: 100%;
   border-radius: 13px;
-  height: 230px;
   position: absolute;
   display: none;
   z-index: 0;
 `;
+
 const Trendingtitle = styled.p`
   font-family: "Outfit", sans-serif;
   font-size: 20px;
@@ -133,15 +134,14 @@ const Trendingcard = styled.div`
   color: white;
   border-radius: 5%;
   background-size: cover;
-  position: relative;
   background-image: ${(props) => `url(${props.image.small})`};
+  position: relative;
 
   @media screen and (min-width: 768px) {
     width: 470px;
     height: 230px;
     cursor: pointer;
     background-image: ${(props) => `url(${props.image.large})`};
-
     &:hover + ${Hover} {
       display: inline;
     }
@@ -151,6 +151,12 @@ const Trendingcard = styled.div`
 const Trendingbox = styled.div`
   display: flex;
   position: relative;
+  width: 240px;
+  height: 140px;
+  @media screen and (min-width: 768px) {
+    width: 470px;
+    height: 230px;
+  }
 `;
 
 const Titelscard = styled.div`
@@ -276,37 +282,31 @@ const Circle = styled.div`
   }
 `;
 
-// const Hover = styled.div`
-//   background: rgba(0, 0, 0, 0.5);
-//   width: 100%;
-//   border-radius: 13px;
-//   height: 230px;
-//   position: absolute;
-//   display: none;
-// `;
+const Playimg = styled.img`
+  width: 30px;
+  height: 30px;
+`;
 
-const Playimg = styled.img``;
+const Playtext = styled.p`
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: white;
+`;
 
 const Playcard = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
-  background: rgba(255, 255, 255, 0.25);
   width: 117px;
   height: 48px;
+  background: rgba(255, 255, 255, 0.25);
   border-radius: 25px;
   position: absolute;
-  left: 35%;
-  top: 40%;
-`;
-
-const Playtext = styled.p`
-  font-family: "Outfit", sans-serif;
-  color: white;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 23px;
-  letter-spacing: 0px;
-  text-align: left;
+  top: 100px;
+  left: 170px;
 `;

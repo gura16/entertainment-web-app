@@ -4,6 +4,7 @@ import icon_movie from "../public/assets/icon-category-movie.svg";
 import icon_tvseries from "../public/assets/icon-category-tv.svg";
 import icon_bookmark_empty from "../public/assets/icon-bookmark-empty.svg";
 import icon_bookmark_full from "../public/assets/icon-bookmark-full.svg";
+import playimage from "../public/assets/icon-play.svg";
 import { useState } from "react";
 
 function Recommended(props) {
@@ -24,22 +25,30 @@ function Recommended(props) {
           )
           .map((item, index) => (
             <Eachcontainer key={index}>
-              <Imgcard img={item}>
-                <Circle
-                  onClick={() => {
-                    movies[index].isBookmarked = !movies[index].isBookmarked;
-                    setMovies([...movies]);
-                  }}
-                >
-                  <Icon_bookmark_empty
-                    src={
-                      item.isBookmarked
-                        ? icon_bookmark_full
-                        : icon_bookmark_empty
-                    }
-                  />
-                </Circle>
-              </Imgcard>
+              <Hovercard>
+                <Imgcard img={item}>
+                  <Circle
+                    onClick={() => {
+                      movies[index].isBookmarked = !movies[index].isBookmarked;
+                      setMovies([...movies]);
+                    }}
+                  >
+                    <Icon_bookmark_empty
+                      src={
+                        item.isBookmarked
+                          ? icon_bookmark_full
+                          : icon_bookmark_empty
+                      }
+                    />
+                  </Circle>
+                </Imgcard>
+                <Hover>
+                  <Playcard>
+                    <Playimg src={playimage} />
+                    <Playtext>Play</Playtext>
+                  </Playcard>
+                </Hover>
+              </Hovercard>
               <Infocard>
                 <Year>{item.year}</Year>
                 <Point></Point>
@@ -59,6 +68,29 @@ function Recommended(props) {
 }
 
 export default Recommended;
+
+const Hovercard = styled.div`
+  position: relative;
+  @media screen and (min-width: 1040px) {
+    width: 80%;
+    height: 174px;
+    cursor: pointer;
+  }
+`;
+
+const Hover = styled.div`
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: none;
+  @media screen and (min-width: 1040px) {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+`;
 
 const Recomendedtitle = styled.p`
   font-family: "Outfit", sans-serif;
@@ -99,6 +131,7 @@ const Imgcard = styled.div`
   height: 110px;
   border-radius: 10px;
   background-image: ${(props) => `url(${props.img.thumbnail.regular.small})`};
+  position: relative;
   @media screen and (min-width: 768px) {
     width: 80%;
     height: 140px;
@@ -107,9 +140,12 @@ const Imgcard = styled.div`
   }
 
   @media screen and (min-width: 1040px) {
-    width: 80%;
-    height: 174px;
+    width: 100%;
+    height: 100%;
     background-image: ${(props) => `url(${props.img.thumbnail.regular.large})`};
+    &:hover + ${Hover} {
+      display: inline;
+    }
   }
 `;
 const Infocard = styled.div`
@@ -215,19 +251,47 @@ const Circle = styled.div`
   margin-top: 10px;
   margin-left: 80%;
   cursor: pointer;
+  position: absolute;
   @media screen and (min-width: 768px) {
     margin-left: 80%;
   }
   @media screen and (min-width: 1040px) {
     margin-left: 80%;
     cursor: pointer;
-    &:hover {
-      background-color: #878383;
-    }
+    z-index: 1;
   }
 `;
 
 const Icon_bookmark_empty = styled.img`
   width: 11.67px;
   height: 14px;
+`;
+
+const Playimg = styled.img`
+  width: 30px;
+  height: 30px;
+`;
+
+const Playtext = styled.p`
+  width: 35px;
+  height: 23px;
+  color: white;
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0px;
+  text-align: left;
+`;
+const Playcard = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+  margin-left: 70px;
+  gap: 20px;
+  width: 100px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 25px;
 `;
