@@ -63,6 +63,7 @@ function Signup() {
           textColor="#FFFFFF"
           onChange={handlePasswordChange}
           style={{ borderColor: isValidPassword ? "" : "red" }}
+          type="password"
         />
         <Repeatpassword
           value={repeatPassword}
@@ -70,6 +71,7 @@ function Signup() {
           textColor="#FFFFFF"
           onChange={handleRepeatPasswordChange}
           style={{ borderColor: isValidRepeatPassword ? "" : "red" }}
+          type="password"
         />
         <Button onClick={handleButton}>Login to your account</Button>
         <Signupcard>

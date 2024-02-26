@@ -54,6 +54,7 @@ function Login() {
           textColor="#FFFFFF"
           onChange={handlePasswordChange}
           style={{ borderColor: isValidPassword ? "" : "red" }}
+          type="password"
         />
         <Button onClick={handleButton}>Login to your account</Button>
         <Signupcard>
