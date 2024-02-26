@@ -83,13 +83,16 @@ const Hover = styled.div`
   position: absolute;
   top: 0px;
   left: 0px;
-  display: none;
   @media screen and (min-width: 1040px) {
     width: 100%;
     height: 100%;
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.5);
     z-index: 0;
+    opacity: 0;
+    &:hover {
+      opacity: 1;
+    }
   }
 `;
 
@@ -144,9 +147,6 @@ const Imgcard = styled.div`
     width: 100%;
     height: 100%;
     background-image: ${(props) => `url(${props.img.thumbnail.regular.large})`};
-    &:hover + ${Hover} {
-      display: inline;
-    }
   }
 `;
 const Infocard = styled.div`

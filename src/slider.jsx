@@ -106,8 +106,12 @@ const Hover = styled.div`
   height: 100%;
   border-radius: 13px;
   position: absolute;
-  display: none;
+  cursor: pointer;
   z-index: 0;
+  opacity: 0;
+  &:hover {
+    opacity: 1;
+  }
 `;
 
 const Trendingtitle = styled.p`
@@ -142,9 +146,6 @@ const Trendingcard = styled.div`
     height: 230px;
     cursor: pointer;
     background-image: ${(props) => `url(${props.image.large})`};
-    &:hover + ${Hover} {
-      display: inline;
-    }
   }
 `;
 
