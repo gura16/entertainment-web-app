@@ -84,6 +84,7 @@ const Hover = styled.div`
   left: 0px;
   display: none;
   @media screen and (min-width: 1040px) {
+    display: inline;
     width: 100%;
     height: 100%;
     border-radius: 10px;

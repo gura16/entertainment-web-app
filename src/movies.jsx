@@ -80,10 +80,12 @@ const Hovercard = styled.div`
 `;
 
 const Hover = styled.div`
+  display: none;
   position: absolute;
   top: 0px;
   left: 0px;
   @media screen and (min-width: 1040px) {
+    display: inline;
     width: 100%;
     height: 100%;
     border-radius: 10px;
