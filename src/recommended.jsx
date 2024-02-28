@@ -82,6 +82,7 @@ const Hover = styled.div`
   position: absolute;
   top: 0px;
   left: 0px;
+  display: none;
   @media screen and (min-width: 1040px) {
     width: 100%;
     height: 100%;
