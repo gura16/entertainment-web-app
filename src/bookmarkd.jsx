@@ -185,7 +185,7 @@ const Eachcontainer = styled.div`
 
 const Imgcard = styled.div`
   background-size: cover;
-  width: 80%;
+  width: 90%;
   height: 110px;
   border-radius: 10px;
   background-image: ${(props) => `url(${props.img.thumbnail.regular.small})`};
