@@ -306,11 +306,11 @@ const Circle = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 10px;
-  margin-left: 80%;
+  margin-left: 70%;
   cursor: pointer;
   position: absolute;
   @media screen and (min-width: 768px) {
-    margin-left: 80%;
+    margin-left: 65%;
   }
   @media screen and (min-width: 1040px) {
     margin-left: 80%;
