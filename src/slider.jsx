@@ -103,6 +103,7 @@ export default MySlider;
 const Hover = styled.div`
   display: none;
   @media screen and (min-width: 1040px) {
+    display: inline;
     background: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100%;
@@ -302,17 +303,15 @@ const Playtext = styled.p`
 `;
 
 const Playcard = styled.div`
-  @media screen and (min-width: 768px) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    width: 117px;
-    height: 48px;
-    background: rgba(255, 255, 255, 0.25);
-    border-radius: 25px;
-    position: absolute;
-    top: 100px;
-    left: 170px;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 117px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 25px;
+  position: absolute;
+  top: 100px;
+  left: 170px;
 `;
