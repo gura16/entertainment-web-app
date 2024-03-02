@@ -302,15 +302,17 @@ const Playtext = styled.p`
 `;
 
 const Playcard = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  width: 117px;
-  height: 48px;
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 25px;
-  position: absolute;
-  top: 100px;
-  left: 170px;
+  @media screen and (min-width: 1040px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 117px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 25px;
+    position: absolute;
+    top: 100px;
+    left: 170px;
+  }
 `;
