@@ -101,6 +101,7 @@ const MySlider = (props) => {
 export default MySlider;
 
 const Hover = styled.div`
+  display: none;
   @media screen and (min-width: 1040px) {
     background: rgba(0, 0, 0, 0.5);
     width: 100%;
