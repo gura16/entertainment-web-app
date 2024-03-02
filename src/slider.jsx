@@ -101,16 +101,18 @@ const MySlider = (props) => {
 export default MySlider;
 
 const Hover = styled.div`
-  background: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  height: 100%;
-  border-radius: 13px;
-  position: absolute;
-  cursor: pointer;
-  z-index: 0;
-  opacity: 0;
-  &:hover {
-    opacity: 1;
+  @media screen and (min-width: 1040px) {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    border-radius: 13px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 0;
+    opacity: 0;
+    &:hover {
+      opacity: 1;
+    }
   }
 `;
 
