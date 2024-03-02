@@ -302,7 +302,7 @@ const Playtext = styled.p`
 `;
 
 const Playcard = styled.div`
-  @media screen and (min-width: 1040px) {
+  @media screen and (min-width: 768px) {
     display: flex;
     align-items: center;
     justify-content: center;
